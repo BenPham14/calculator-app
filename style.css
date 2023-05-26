@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 340px;
+    margin: 50px auto 0;
+    gap: 10px;
+    background-color: black;
+    padding: 20px;
+}
+
+.screen {
+    grid-column: span 4;
+    text-align: right;
+    padding: 40px 20px 10px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    font-size: 48px;
+}
+
+.zero {
+    grid-column: span 2;
+    border-radius: 35px;
+}
+
+button {
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    min-width: 60px;
+}
