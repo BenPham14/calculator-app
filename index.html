@@ -9,27 +9,45 @@
 </head>
 <body>
     <div class="calculator">
-        <input type="text" class="screen" name="screen" id="screen" placeholder="0">
+        <input type="text" class="screen" name="screen" placeholder="0">
 
-        <button onclick="">C</button>
-        <button onclick="">+/-</button>
-        <button onclick="">%</button>
-        <button onclick="">÷</button>
-        <button onclick="">7</button>
-        <button onclick="">8</button>
-        <button onclick="">9</button>
-        <button onclick="">×</button>
-        <button onclick="">4</button>
-        <button onclick="">5</button>
-        <button onclick="">6</button>
-        <button onclick="">-</button>
-        <button onclick="">1</button>
-        <button onclick="">2</button>
-        <button onclick="">3</button>
-        <button onclick="">+</button>
-        <button onclick="" class="zero">0</button>
-        <button onclick="">.</button>
-        <button onclick="">=</button>
+        <button class="top" onclick="wipe()">C</button>
+        <button class="top" onclick="show('(')">(</button>
+        <button class="top" onclick="show(')')">)</button>
+        <button class="right" onclick="show('/')">÷</button>
+        <button class="number" onclick="show('7')">7</button>
+        <button class="number" onclick="show('8')">8</button>
+        <button class="number" onclick="show('9')">9</button>
+        <button class="right" onclick="show('*')">×</button>
+        <button class="number" onclick="show('4')">4</button>
+        <button class="number" onclick="show('5')">5</button>
+        <button class="number" onclick="show('6')">6</button>
+        <button class="right" onclick="show('-')">-</button>
+        <button class="number" onclick="show('1')">1</button>
+        <button class="number" onclick="show('2')">2</button>
+        <button class="number" onclick="show('3')">3</button>
+        <button class="right" onclick="show('+')">+</button>
+        <button class="zero" onclick="show('0')">0</button>
+        <button class="period" onclick="show('.')">.</button>
+        <button class="right" onclick="solve()">=</button>
     </div>
+
+    <script>
+        let screen = document.querySelector(".screen");
+        let clr = document.querySelector(".top");
+
+        const wipe = () => {
+            screen.value = '';
+        };
+
+        const show = (n) => {
+            screen.value += n;
+        };
+
+        const solve = () => {
+            screen.value = eval(screen.value);
+        };
+
+    </script>
 </body>
 </html>
